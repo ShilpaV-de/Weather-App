@@ -1,15 +1,59 @@
+/* Search bar — lives in the site header */
+
 .SearchBox {
-    margin-top: 5px;
-    text-align: center;
-    color: aliceblue;
+  width: 100%;
 }
 
-#City {
-    background-color: aliceblue;
-    color: black;
+.SearchBox form {
+  width: 100%;
 }
 
-Button {
-    background-color: rgb(102, 22, 22);
-    
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 5px 5px 5px 12px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-row:focus-within {
+  border-color: var(--accent);
+  box-shadow: var(--ring);
+}
+
+.search-icon {
+  display: inline-flex;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.search-row input[type="search"] {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.95rem;
+  padding: 9px 4px;
+  outline: none;
+  box-shadow: none;
+}
+
+.search-row input[type="search"]::placeholder {
+  color: var(--muted);
+}
+
+.search-row input[type="search"]::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.search-hint {
+  margin: 6px 2px 0;
+  font-size: 0.82rem;
+  color: var(--danger);
+  font-weight: 600;
 }
